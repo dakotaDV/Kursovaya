@@ -74,12 +74,19 @@ public class Basic {
         return result;
     }
     public static float calculateAverageSalary(){
-        return calculateTotalSalary() / (float) employees.length;
+        int count = 0;
+        int sum = 0;
+        for (Employee employee : employees){
+            if (employee!= null){
+                count++;
+                sum += employee.getSalary();
+            }
+        }
+        return  (float) sum / count;
     }
     public static void printFullNames(){
         for (Employee employee : employees){
             System.out.println(employee.getLastName());
         }
 }
-
 }
